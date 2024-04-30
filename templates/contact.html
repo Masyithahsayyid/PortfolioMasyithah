@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        body {
+            background-color: rgb(223, 176, 235); /* Warna latar belakang biru muda */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif; /* Menggunakan Arial sebagai font utama */
+        }
+
+        .navbar {
+            background-color: rgb(143, 72, 139); /* Warna latar belakang biru */
+            overflow: hidden; /* Mencegah overflow */
+            display: flex; /* Mengatur navbar untuk menggunakan flexbox */
+            justify-content: center; /* Pusatkan link navbar secara horizontal */
+        }
+
+        .navbar a {
+            color: white; /* Warna teks putih */
+            padding: 14px 20px; /* Padding untuk ruang di sekitar teks link */
+            text-decoration: none; /* Hapus underline dari link */
+            transition: background-color 0.3s; /* Efek transisi smooth */
+        }
+
+        .navbar a:hover {
+            background-color: #5a2a5a; /* Warna latar belakang link saat hover */
+        }
+
+        h1 {
+            text-align: center; /* Pusatkan judul */
+            background-color: rgb(143, 72, 139); /* Warna latar belakang biru */
+            color: white; /* Warna teks putih */
+            padding: 20px; /* Ruang di sekitar judul */
+        }
+
+        form {
+            background-color: white; /* Warna latar belakang form */
+            padding: 20px; /* Ruang di sekitar form */
+            border-radius: 10px; /* Sudut kotak melengkung */
+            max-width: 400px; /* Lebar maksimum form */
+            margin: 0 auto; /* Pusatkan form */
+        }
+
+        form label {
+            display: block; /* Menjadikan setiap label berada di baris yang berbeda */
+            margin-bottom: 10px; /* Jarak antara setiap label */
+            font-weight: bold; /* Menebalkan teks label */
+        }
+
+        form input[type="text"],
+        form textarea {
+            width: 100%; /* Lebar input dan textarea */
+            padding: 10px; /* Ruang di dalam input dan textarea */
+            margin-bottom: 10px; /* Jarak antar input */
+            border: 1px solid #ccc; /* Garis tepi */
+            border-radius: 5px; /* Sudut kotak melengkung */
+            box-sizing: border-box; /* Biarkan padding dan border termasuk dalam lebar */
+        }
+
+        form button {
+            width: 100%; /* Lebar tombol */
+            padding: 10px; /* Ruang di dalam tombol */
+            background-color: rgb(229, 173, 236); /* Warna latar belakang tombol */
+            color: white; /* Warna teks tombol */
+            border: none; /* Hapus garis tepi */
+            border-radius: 5px; /* Sudut kotak melengkung */
+            cursor: pointer; /* Ganti kursor saat di atas tombol */
+        }
+
+        form button:hover {
+            background-color: #5a2a5a; /* Warna latar belakang tombol saat hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="http://localhost:8000/#home" class="http://localhost:8000/#home">Home</a></li>
+        <a href="http://localhost:8000/projects/" class="http://localhost:8000/projects">Projects</a></li>
+        <a href="http://localhost:about/" class="http://localhost:8000/about">About</a></li>
+        <a href="http://localhost:8000/blog/" class="http://localhost:8000/blog">blog</a></li>
+        <a  href="http://localhost:8000/Contact/" class="http://localhost:8000/contact">Contact</a></li>
+    </div>
+    <h1>Contact Me</h1>
+    <form method="post">
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>

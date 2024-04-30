@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <style>
+        body {
+            background-color: lightblue; /* Latar belakang biru */
+            font-family: Arial, sans-serif; /* Font family */
+            padding: 20px; /* Ruang di sekitar konten */
+        }
+        h1 {
+            color: white; /* Warna teks putih */
+            text-align: center; /* Pusatkan judul */
+        }
+        #skills-list {
+            list-style-type: none; /* Hapus bullet pada list */
+            padding: 0; /* Hapus padding */
+            margin: 0; /* Hapus margin */
+        }
+        li {
+            background-color: white; /* Latar belakang putih untuk setiap item */
+            margin-bottom: 10px; /* Jarak antara item */
+            padding: 10px; /* Ruang di dalam setiap item */
+        }
+    </style>
+</head>
+<body>
+    <h1>Skills</h1>
+    <ul id="skills-list">
+        <!-- Data keterampilan akan dimuat di sini secara dinamis -->
+    </ul>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Data keterampilan yang akan dimuat
+            var skills = [
+                {'name': 'Editing', 'description': 'canva, capcut, vn.', 'percentage': 90},
+                {'name': 'Design', 'description': 'UI/UX, Adobe Suite', 'percentage': 85},
+                {'name': 'Writing', 'description': 'Content creation, Copywriting', 'percentage': 80}
+            ];
+
+            // Memuat data keterampilan ke dalam daftar
+            var skillsList = document.getElementById('skills-list');
+            skills.forEach(function(skill) {
+                var listItem = document.createElement('li');
+                listItem.textContent = skill.name + ' - ' + skill.description + ' (' + skill.percentage + '%)';
+                skillsList.appendChild(listItem);
+            });
+        });
+    </script>
+</body>
+</html>

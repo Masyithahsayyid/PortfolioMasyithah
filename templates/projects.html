@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <style>
+        body {
+            background-color: #DDD6E8; /* Warna ungu muda */
+            font-family: Arial, sans-serif;
+            padding: 0;
+            margin: 0; /* Menghapus margin default */
+        }
+        .navbar {
+            background-color: #673AB7; /* Warna ungu tua */
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        .navbar-nav {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .nav-item {
+            margin-right: 10px;
+        }
+        .nav-item a {
+            text-decoration: none;
+            color: white;
+        }
+        .container {
+            background-color: #F0E7D8; /* Warna tan */
+            max-width: 800px; /* Lebar maksimum konten */
+            margin: 20px auto; /* Posisi tengah */
+            padding: 20px;
+            border-radius: 10px; /* Sudut sudut */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Bayangan tipis */
+        }
+        h1 {
+            color: #673AB7; /* Warna ungu tua */
+            text-align: center;
+        }
+        #projects-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: grid; /* Gunakan grid untuk susunan */
+            gap: 20px; /* Jarak antar item */
+        }
+        li {
+            background-color: #FFFFFF; /* Warna putih */
+            padding: 20px;
+            border-radius: 5px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan tipis */
+        }
+        img {
+            max-width: 100%;
+            display: block;
+            margin-bottom: 10px;
+            border-radius: 5px; /* Sudut sudut */
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        a {
+            display: block;
+            text-align: center;
+            background-color: #673AB7; /* Warna ungu tua */
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        a:hover {
+            background-color: #5A2E9E; /* Warna ungu lebih tua saat hover */
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="navbar-brand">Masyithah Portfolio</a>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="http://localhost:8000/#home">Home</a></li>
+            <li class="nav-item"><a href="http://localhost:8000/projects/">Projects</a></li>
+            <li class="nav-item"><a href="http://localhost:8000/about/">About</a></li>
+            <li class="nav-item"><a href="http://localhost:8000/blog/">Blog</a></li>
+            <li class="nav-item"><a href="http://localhost:8000/contact/">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container"> <!-- Tambahkan div container -->
+        <h1>Projects</h1>
+        <ul id="projects-list">
+            <!-- Projects will be dynamically added here -->
+        </ul>
+    </div>
+
+    <script>
+        var projects = [
+            {
+                'title': 'Membuat Blog Menarik dengan Blogger',
+                'description': 'Proyek ini bertujuan untuk membuat sebuah blog yang menarik menggunakan platform Blogger. Blogger adalah salah satu platform blogging yang paling populer dan mudah digunakan, yang dikelola oleh Google. Dengan menggunakan Blogger, Anda dapat membuat blog pribadi atau profesional dengan cepat dan mudah tanpa memerlukan pengetahuan mendalam tentang pemrograman web.',
+                'image': {'url': 'path/to/blogger.jpg'},
+                'link': 'https://masyithahbisdig.blogspot.com/'
+            },
+            {
+                'title': 'Membuat website dengan WordPress ',
+                'description': 'Pengalaman saya membuat website pribadi dengan WordPress adalah perjalanan yang membangun pengetahuan dan keterampilan saya dalam mengelola situs web dan berbagi konten dengan audiens secara online. Dengan menggunakan WordPress, saya memiliki alat yang kuat dan intuitif untuk mengubah visi saya menjadi kenyataan digital.',
+                'image': {'url': 'path/to/image2.jpg'},
+                'link': 'https://masyithah.bisdiglab.com/'
+            },
+            {
+                'title': 'Konten Spesialis untuk Produk SmartComb',
+                'description': 'Proyek ini adalah tentang menjadi seorang spesialis konten untuk produk SmartComb, sebuah perangkat pintar yang mengintegrasikan teknologi terbaru untuk meningkatkan kebersihan dan kesehatan rambut. Sebagai konten spesialis,  bertanggung jawab untuk menciptakan konten yang informatif, menarik, dan persuasif yang akan digunakan untuk mempromosikan produk SmartComb kepada target pasar.',
+                'image': {'url': 'path/to/image3.jpg'},
+                'link': 'https://example.com/project3'
+            }
+        ];
+
+        function renderProjects() {
+            var projectsList = document.getElementById('projects-list');
+            projects.forEach(function(project) {
+                var li = document.createElement('li');
+                var img = document.createElement('img');
+                img.src = project.image.url;
+                img.alt = project.title;
+                var h2 = document.createElement('h2');
+                h2.textContent = project.title;
+                var p = document.createElement('p');
+                p.textContent = project.description;
+                var a = document.createElement('a');
+                a.href = project.link;
+                a.target = '_blank';
+                a.textContent = 'Visit Project';
+
+                li.appendChild(h2);
+                li.appendChild(p);
+                li.appendChild(img);
+                li.appendChild(a);
+
+                projectsList.appendChild(li);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', renderProjects);
+    </script>
+</body>
+</html>
